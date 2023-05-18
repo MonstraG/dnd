@@ -129,7 +129,7 @@ export const archtypes = {
     179: 'путь солнечной души (монах)'
 }
 
-export type archtype = keyof typeof archtypes;
+export type Archtype = keyof typeof archtypes;
 
 export enum CastTimeType {
   Action = 1,
@@ -164,7 +164,7 @@ export type UnparsedSpell = {
   item_suffix: "В.." | "ВС." | "ВСМ" | "В.М" | ".СМ" | ".С.",
   classes: (keyof typeof Classes)[],
   classesTce: (keyof typeof Classes)[],
-  archtype?: archtype[],
+  archtypes?: Archtype[],
   source: (keyof typeof sources)[],
   needsConcentration?: boolean,
   isRitual?: boolean,
@@ -173,7 +173,6 @@ export type UnparsedSpell = {
   distance: string,
   duration: string,
   description: string,
-  archtypes?: string,
 }
 
 export type Spell = UnparsedSpell & {

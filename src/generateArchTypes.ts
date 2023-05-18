@@ -7,8 +7,11 @@ const knownIds = Object.keys(archtypes).map(x => parseInt(x));
 const dict: Record<number, string> = {
 }
 
+// used to be true before
+const allSpellsWhileTransforming = allSpells as unknown as (Omit<typeof allSpells[number], "archtypes"> & { archtype: number[], archtypes: string })[]
+
 const main = () => {
-    for(let spell of allSpells) {
+    for(let spell of allSpellsWhileTransforming) {
         const hasOneButNotOther = (spell.archtype == null) !== (spell.archtypes == null);
         if (hasOneButNotOther) {
             console.log(spell.slug + "hasOneButNotOther BAD!!!!!");
