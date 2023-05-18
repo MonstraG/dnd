@@ -1,4 +1,4 @@
-import { unprasedSpells } from "./spells";
+import { allSpells } from "./allSpells";
 import fs from "fs/promises";
 import { parse } from 'node-html-parser';
 
@@ -21,7 +21,7 @@ import { parse } from 'node-html-parser';
     }
     const knownLines = [...Object.values(infoToParse), "<strong>Компоненты:</strong> ", "<strong>Классы:</strong> ", "<strong>Источники:</strong> "];
 
-    for (let spell of unprasedSpells) {
+    for (let spell of allSpells) {
         const readFilePath = `${readDir}/${spell.slug}.html`;
         const writeFilePath = `${targetDir}/${spell.slug}.json`;
 

@@ -1,4 +1,4 @@
-import { spells } from "./spells";
+import { spells } from "./parsedSpells";
 import fs from "fs/promises";
 import { parse } from 'node-html-parser';
 import { setTimeout } from 'timers/promises';

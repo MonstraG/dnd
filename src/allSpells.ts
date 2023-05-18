@@ -1,6 +1,6 @@
-import { UnparsedSpell } from "spells";
+import { UnparsedSpell } from "spells.types";
 
-export const spellsSource: UnparsedSpell[] = [
+export const allSpells: UnparsedSpell[] = [
   {
     "title": "Адское возмездие",
     "title_en": "Hellish rebuke",

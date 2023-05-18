@@ -1,4 +1,4 @@
-import { unprasedSpells } from "./spells";
+import { allSpells } from "./allSpells";
 import fs from "fs/promises";
 
 (async () => {
@@ -6,7 +6,7 @@ import fs from "fs/promises";
     const writeFilePath = `allSpells.json`;
 
     const data: unknown[] = []
-    for (let spell of unprasedSpells) {
+    for (let spell of allSpells) {
         const readFilePath = `${readDir}/${spell.slug}.json`;
 
         const buffer = await fs.readFile(readFilePath);

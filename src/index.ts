@@ -1,3 +1,3 @@
-import * as Spells from "spells";
+import * as Spells from "parsedSpells";
 
 export default Spells;
