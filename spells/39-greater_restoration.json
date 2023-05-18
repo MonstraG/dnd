@@ -1,0 +1,31 @@
+{
+  "title": "Высшее восстановление",
+  "title_en": "Greater restoration",
+  "slug": "39-greater_restoration",
+  "level": 5,
+  "item_suffix": "ВСМ",
+  "schoolSlug": "abjuration",
+  "classes": [
+    12,
+    22,
+    13,
+    23
+  ],
+  "classesTce": [
+    17
+  ],
+  "archtype": [
+    157,
+    169,
+    215
+  ],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "Касание",
+  "duration": "Мгновенная",
+  "archtypes": "домен мира (жрец), заводная душа (чародей), небожитель (колдун)",
+  "description": "<p>Вы наделяете существо, которого касаетесь, позитивной энергией, отменяющей ослабляющие эффекты. Вы можете уменьшить количество степеней&nbsp;<span tooltip-for=\"condition.exhaustion\" title=\"condition.exhaustion\">истощения</span> цели на 1 или окончить на ней один из следующих эффектов:</p>\n<ul>\n<li>Один эффект, делающий цель <span tooltip-for=\"condition.charmed\" title=\"condition.charmed\">очарованной</span> или <span tooltip-for=\"condition.petrified\" title=\"condition.petrified\">окаменевшей</span>.</li><li>Одно проклятье, включая настройку на проклятый магический предмет.</li>\n<li>Любое уменьшение одной из характеристик цели.</li>\n<li>Один эффект, уменьшающий максимум хитов цели.</li>\n</ul>"
+}

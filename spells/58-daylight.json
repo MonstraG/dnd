@@ -1,0 +1,30 @@
+{
+  "title": "Дневной свет",
+  "title_en": "Daylight",
+  "slug": "58-daylight",
+  "level": 3,
+  "item_suffix": "ВС.",
+  "schoolSlug": "evocation",
+  "classes": [
+    22,
+    13,
+    16,
+    17,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [
+    139,
+    152,
+    169
+  ],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "60 футов",
+  "duration": "1 час",
+  "archtypes": "домен света (жрец), круг земли (друид), небожитель (колдун)",
+  "description": "<p>Из точки, выбранной вами в пределах дистанции, распространяется сфера света с радиусом 60 футов. Сфера излучает <span tooltip-for=\"light.bright\" title=\"light.bright\">яркий свет</span><span> и </span><span tooltip-for=\"light.dim\" title=\"light.dim\">тусклый свет</span><span> в пределах ещё 60 футов. </span></p><p><span>Если выбранная вами точка находится на предмете, который вы держите или который никто не несёт или носит, свет исходит из предмета и перемещается вместе с ним. Если полностью накрыть источник света непрозрачным предметом, например, чашей или шлемом, свет будет заблокирован. </span></p><p><span>Если часть области этого заклинания накрывает область&nbsp;</span><span tooltip-for=\"light.darkness\" title=\"light.darkness\">тьмы</span><span>, созданной заклинанием с уровнем не выше 3-го, закли</span><span>нание, создавшее тьму, рассеивается.</span></p>"
+}

@@ -71,7 +71,7 @@ export type Classes = {
 const archtypes = [107,135,136,139,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,174,175,179,183,184,185,186,187,188,189,190,191,194,203,204,205,206,207,208,211,212,214,215,286] as const;
 type archtype = typeof archtypes[number];
 
-export enum CastTime {
+export enum CastTimeType {
     Reaction = "reaction",
     Hour = "hour",
     Action = "action",
@@ -92,7 +92,7 @@ type UnparsedSpell = {
   source: [102] | [107, 109] | [109] | [108, 117] | [112] | [115] | [116] | [120] | [117] | [155] | [153] | [152] | [160],
   needsConcentration: boolean,
   isRitual: boolean,
-  castTime: CastTime,
+  castTimeType: CastTimeType,
 }
 
 export type Spell = UnparsedSpell & {
@@ -110,7 +110,7 @@ const parseSpell = (spell: UnparsedSpell): Spell => ({
     href: `https://dnd.su/spells/${spell.slug}`
 })
 
-const unprasedSpells: UnparsedSpell[] = [
+export const unprasedSpells: UnparsedSpell[] = [
     {
       title: "Адское возмездие",
       title_en: "Hellish rebuke",
@@ -124,7 +124,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Reaction
+      castTimeType: CastTimeType.Reaction
     },
     {
       title: "Антипатия/симпатия",
@@ -139,7 +139,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Аура живучести",
@@ -154,7 +154,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Аура жизни",
@@ -169,7 +169,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Аура очищения",
@@ -184,7 +184,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Аура святости",
@@ -199,7 +199,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Безмолвный образ",
@@ -214,7 +214,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Бесследное передвижение",
@@ -229,7 +229,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Благословение",
@@ -244,7 +244,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Божественное благоволение",
@@ -259,7 +259,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Божественное оружие",
@@ -274,7 +274,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Божественное слово",
@@ -289,7 +289,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Брызги кислоты",
@@ -304,7 +304,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Быстрый колчан",
@@ -319,7 +319,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Ведьмин снаряд",
@@ -334,7 +334,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Великолепный особняк Морденкайнена",
@@ -349,7 +349,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Верный пёс Морденкайнена",
@@ -364,7 +364,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Вечный огонь",
@@ -379,7 +379,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Вещий сон",
@@ -394,7 +394,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Видение невидимого",
@@ -409,7 +409,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Власть над водами",
@@ -424,7 +424,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Власть над погодой",
@@ -439,7 +439,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Внушение",
@@ -454,7 +454,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Возрождение",
@@ -469,7 +469,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Волна грома",
@@ -484,7 +484,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Волшебная рука",
@@ -499,7 +499,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Волшебная стрела",
@@ -514,7 +514,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Волшебные уста",
@@ -529,7 +529,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Волшебный замок",
@@ -544,7 +544,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Волшебный сосуд",
@@ -559,7 +559,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Воображаемая сила",
@@ -574,7 +574,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Воображаемый убийца",
@@ -589,7 +589,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Воскрешение",
@@ -604,7 +604,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Воспламеняющаяся туча",
@@ -619,7 +619,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Восставший труп",
@@ -634,7 +634,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Врата",
@@ -649,7 +649,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Вызов на дуэль",
@@ -664,7 +664,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Высшая невидимость",
@@ -679,7 +679,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Высшее восстановление",
@@ -694,7 +694,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Гадание",
@@ -709,7 +709,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Газообразная форма",
@@ -724,7 +724,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Героизм",
@@ -739,7 +739,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Гигантское насекомое",
@@ -754,7 +754,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Гипнотический узор",
@@ -769,7 +769,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Глухота/слепота",
@@ -784,7 +784,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Гневная кара",
@@ -799,7 +799,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Голод Хадара",
@@ -814,7 +814,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Горящий клинок",
@@ -829,7 +829,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Град",
@@ -844,7 +844,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Град шипов",
@@ -859,7 +859,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Гроза гнева",
@@ -874,7 +874,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Громовая кара",
@@ -889,7 +889,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Движение почвы",
@@ -904,7 +904,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Двойник",
@@ -919,7 +919,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Демиплан",
@@ -934,7 +934,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Диссонирующие шёпоты",
@@ -949,7 +949,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Длань Бигби",
@@ -964,7 +964,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Дневной свет",
@@ -979,7 +979,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Доспех Агатиса",
@@ -994,7 +994,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Доспехи мага",
@@ -1009,7 +1009,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Языки",
@@ -1024,7 +1024,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Дребезги",
@@ -1039,7 +1039,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Ядовитые брызги",
@@ -1054,7 +1054,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Эфирность",
@@ -1069,7 +1069,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Древесный путь",
@@ -1084,7 +1084,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Электрошок",
@@ -1099,7 +1099,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Эвардовы чёрные щупальца",
@@ -1114,7 +1114,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Дромиджево появление",
@@ -1129,7 +1129,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Щит веры",
@@ -1144,7 +1144,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Щит",
@@ -1159,7 +1159,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Reaction
+      castTimeType: CastTimeType.Reaction
     },
     {
       title: "Дружба",
@@ -1174,7 +1174,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Дружба с животными",
@@ -1189,7 +1189,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Дубинка",
@@ -1204,7 +1204,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Дубовая кора",
@@ -1219,7 +1219,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Духовные стражи",
@@ -1234,7 +1234,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Животные чувства",
@@ -1249,7 +1249,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Шипы",
@@ -1264,7 +1264,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Чудо-ягоды",
@@ -1279,7 +1279,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Жуткий смех Таши",
@@ -1294,7 +1294,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Чудотворство",
@@ -1309,7 +1309,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Завеса стрел",
@@ -1324,7 +1324,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Заданная иллюзия",
@@ -1339,7 +1339,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Замедление",
@@ -1354,7 +1354,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Цунами",
@@ -1369,7 +1369,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Цепкая лоза",
@@ -1384,7 +1384,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Цветной шарик",
@@ -1399,7 +1399,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Замедленный огненный шар",
@@ -1414,7 +1414,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Хождение по воде",
@@ -1429,7 +1429,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Запрет",
@@ -1444,7 +1444,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Хождение по ветру",
@@ -1459,7 +1459,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Фокусы",
@@ -1474,7 +1474,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Заражение",
@@ -1489,7 +1489,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Фальшивый двойник",
@@ -1504,7 +1504,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Уход за умирающим",
@@ -1519,7 +1519,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Уход в иной мир",
@@ -1534,7 +1534,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Усыхание",
@@ -1549,7 +1549,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Заточение",
@@ -1564,7 +1564,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Усыпление",
@@ -1579,7 +1579,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Защита от зла и добра",
@@ -1594,7 +1594,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Ускорение",
@@ -1609,7 +1609,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Защита от оружия",
@@ -1624,7 +1624,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Умиротворение",
@@ -1639,7 +1639,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Улучшение характеристики",
@@ -1654,7 +1654,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Защита от смерти",
@@ -1669,7 +1669,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Указание",
@@ -1684,7 +1684,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Защита от энергии",
@@ -1699,7 +1699,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Узилище",
@@ -1714,7 +1714,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Защита от яда",
@@ -1729,7 +1729,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Ужас",
@@ -1744,7 +1744,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Удержание чудовища",
@@ -1759,7 +1759,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Землетрясение",
@@ -1774,7 +1774,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Злая насмешка",
@@ -1789,7 +1789,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Зловонное облако",
@@ -1804,7 +1804,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Знак",
@@ -1819,7 +1819,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Знание легенд",
@@ -1834,7 +1834,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Изгнание",
@@ -1849,7 +1849,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Изгоняющая кара",
@@ -1864,7 +1864,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Изготовление",
@@ -1879,7 +1879,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Изменение памяти",
@@ -1894,7 +1894,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Изменение тяготения",
@@ -1909,7 +1909,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Изменение формы камня",
@@ -1924,7 +1924,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Изоляция",
@@ -1939,7 +1939,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Искусство друидов",
@@ -1954,7 +1954,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Исполнение желаний",
@@ -1969,7 +1969,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Истинное воскрешение",
@@ -1984,7 +1984,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Истинное зрение",
@@ -1999,7 +1999,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Истинное превращение",
@@ -2014,7 +2014,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Кабинет Морденкайнена",
@@ -2029,7 +2029,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Каменная кожа",
@@ -2044,7 +2044,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Каменная стена",
@@ -2059,7 +2059,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Клеймящая кара",
@@ -2074,7 +2074,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Контрзаклинание",
@@ -2089,7 +2089,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Reaction
+      castTimeType: CastTimeType.Reaction
     },
     {
       title: "Конус холода",
@@ -2104,7 +2104,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Корона безумия",
@@ -2119,7 +2119,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Круг силы",
@@ -2134,7 +2134,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Круг смерти",
@@ -2149,7 +2149,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Круг телепортации",
@@ -2164,7 +2164,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Лабиринт",
@@ -2179,7 +2179,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Левитация",
@@ -2194,7 +2194,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Леденящее прикосновение",
@@ -2209,7 +2209,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Ледяная стена",
@@ -2224,7 +2224,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Леомундов потайной сундук",
@@ -2239,7 +2239,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Леомундова хижина",
@@ -2254,7 +2254,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Лечащее слово",
@@ -2269,7 +2269,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Лечение ран",
@@ -2284,7 +2284,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Лунный луч",
@@ -2299,7 +2299,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Луч болезни",
@@ -2314,7 +2314,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Луч слабости",
@@ -2329,7 +2329,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Луч холода",
@@ -2344,7 +2344,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Магические врата",
@@ -2359,7 +2359,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Магический глаз",
@@ -2374,7 +2374,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Магический круг",
@@ -2389,7 +2389,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Магическое оружие",
@@ -2404,7 +2404,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Малая иллюзия",
@@ -2419,7 +2419,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Малое восстановление",
@@ -2434,7 +2434,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Мантия крестоносца",
@@ -2449,7 +2449,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Маскировка",
@@ -2464,7 +2464,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Маяк надежды",
@@ -2479,7 +2479,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Мельфова кислотная стрела",
@@ -2494,7 +2494,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Ментальная связь Рэри",
@@ -2509,7 +2509,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Мерцание",
@@ -2524,7 +2524,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Метель",
@@ -2539,7 +2539,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Метеоритный дождь",
@@ -2554,7 +2554,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Метка охотника",
@@ -2569,7 +2569,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Меткий удар",
@@ -2584,7 +2584,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Меч Морденкайнена",
@@ -2599,7 +2599,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Мираж",
@@ -2614,7 +2614,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Мистический заряд",
@@ -2629,7 +2629,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Множественное внушение",
@@ -2644,7 +2644,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Множественное лечащее слово",
@@ -2659,7 +2659,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Множественное лечение ран",
@@ -2674,7 +2674,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Множественное полное исцеление",
@@ -2689,7 +2689,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Молебен лечения",
@@ -2704,7 +2704,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Молниевая стрела",
@@ -2719,7 +2719,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Молния",
@@ -2734,7 +2734,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Наблюдение",
@@ -2749,7 +2749,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Нанесение ран",
@@ -2764,7 +2764,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Направляющий снаряд",
@@ -2779,7 +2779,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Находчивость",
@@ -2794,7 +2794,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Нашествие насекомых",
@@ -2809,7 +2809,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Небесный огонь",
@@ -2833,7 +2833,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Невидимое письмо",
@@ -2848,7 +2848,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Невидимость",
@@ -2863,7 +2863,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Невидимый слуга",
@@ -2878,7 +2878,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Необнаружимость",
@@ -2893,7 +2893,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Нетленные останки",
@@ -2908,7 +2908,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Неудержимая пляска Отто",
@@ -2923,7 +2923,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Нистулова ложная аура",
@@ -2938,7 +2938,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Обет",
@@ -2953,7 +2953,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Облако кинжалов",
@@ -2968,7 +2968,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Облако смерти",
@@ -2983,7 +2983,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Область истины",
@@ -2998,7 +2998,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Обнаружение болезней и яда",
@@ -3013,7 +3013,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Обнаружение зла и добра",
@@ -3028,7 +3028,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Обнаружение магии",
@@ -3043,7 +3043,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Обнаружение мыслей",
@@ -3058,7 +3058,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Образ",
@@ -3073,7 +3073,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Общение",
@@ -3088,7 +3088,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Общение с природой",
@@ -3103,7 +3103,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Оглушающая кара",
@@ -3118,7 +3118,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Огненная буря",
@@ -3133,7 +3133,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Огненная стена",
@@ -3148,7 +3148,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Огненные ладони",
@@ -3163,7 +3163,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Огненный снаряд",
@@ -3178,7 +3178,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Огненный шар",
@@ -3193,7 +3193,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Огненный щит",
@@ -3208,7 +3208,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Огонь фей",
@@ -3223,7 +3223,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Оживление",
@@ -3238,7 +3238,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Окаменение",
@@ -3253,7 +3253,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Опознание",
@@ -3268,7 +3268,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Опутывание",
@@ -3283,7 +3283,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Опутывающий удар",
@@ -3298,7 +3298,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Ослепляющая кара",
@@ -3313,7 +3313,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Остановка времени",
@@ -3328,7 +3328,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Отилюков ледяной шар",
@@ -3343,7 +3343,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Отилюков упругий шар",
@@ -3358,7 +3358,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Открывание",
@@ -3373,7 +3373,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Отражения",
@@ -3388,7 +3388,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Охранные руны",
@@ -3403,7 +3403,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Охраняющая связь",
@@ -3418,7 +3418,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Очарование личности",
@@ -3433,7 +3433,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Очищение пищи и питья",
@@ -3448,7 +3448,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Падение пёрышком",
@@ -3463,7 +3463,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Reaction
+      castTimeType: CastTimeType.Reaction
     },
     {
       title: "Палящая кара",
@@ -3478,7 +3478,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Палящий луч",
@@ -3493,7 +3493,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Паук",
@@ -3508,7 +3508,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Паутина",
@@ -3523,7 +3523,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Переносящая дверь",
@@ -3538,7 +3538,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Перст смерти",
@@ -3553,7 +3553,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Пир героев",
@@ -3568,7 +3568,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Планарные узы",
@@ -3583,7 +3583,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Планарный союзник",
@@ -3598,7 +3598,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Пляшущая молния",
@@ -3613,7 +3613,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Пляшущие огоньки",
@@ -3628,7 +3628,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Подводное дыхание",
@@ -3643,7 +3643,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Подмога",
@@ -3658,7 +3658,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Подобие",
@@ -3673,7 +3673,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Подсматривание",
@@ -3688,7 +3688,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Подчинение зверя",
@@ -3703,7 +3703,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Подчинение личности",
@@ -3718,7 +3718,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Подчинение чудовища",
@@ -3733,7 +3733,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Поиск животных или растений",
@@ -3748,7 +3748,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Поиск ловушек",
@@ -3763,7 +3763,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Поиск предмета",
@@ -3778,7 +3778,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Поиск пути",
@@ -3793,7 +3793,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Поиск скакуна",
@@ -3808,7 +3808,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Поиск существа",
@@ -3823,7 +3823,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Поиск фамильяра",
@@ -3838,7 +3838,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Полёт",
@@ -3853,7 +3853,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Полное исцеление",
@@ -3868,7 +3868,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Полное превращение",
@@ -3883,7 +3883,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Понимание языков",
@@ -3898,7 +3898,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Поражение",
@@ -3913,7 +3913,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Порча",
@@ -3928,7 +3928,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Порыв ветра",
@@ -3943,7 +3943,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Послание",
@@ -3958,7 +3958,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Поспешное отступление",
@@ -3973,7 +3973,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Починка",
@@ -3988,7 +3988,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Почтовое животное",
@@ -4003,7 +4003,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Превращение",
@@ -4018,7 +4018,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Превращение в животных",
@@ -4033,7 +4033,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Преграда жизни",
@@ -4048,7 +4048,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Преграда магии",
@@ -4063,7 +4063,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Предвидение",
@@ -4078,7 +4078,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Предосторожность",
@@ -4093,7 +4093,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Предсказание",
@@ -4108,7 +4108,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв животных",
@@ -4123,7 +4123,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв заграждения",
@@ -4138,7 +4138,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв залпа",
@@ -4153,7 +4153,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв лесных обитателей",
@@ -4168,7 +4168,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв малых элементалей",
@@ -4183,7 +4183,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Призыв молнии",
@@ -4198,7 +4198,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв небожителя",
@@ -4213,7 +4213,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Призыв феи",
@@ -4228,7 +4228,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Призыв элементаля",
@@ -4243,7 +4243,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Приказ",
@@ -4258,7 +4258,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Прикосновение вампира",
@@ -4273,7 +4273,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Принуждение",
@@ -4288,7 +4288,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призрачный скакун",
@@ -4303,7 +4303,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Притворная смерть",
@@ -4318,7 +4318,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Притворство",
@@ -4333,7 +4333,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Пробуждение разума",
@@ -4348,7 +4348,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Проекция",
@@ -4363,7 +4363,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Проекция в астрал",
@@ -4378,7 +4378,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Проклятие",
@@ -4393,7 +4393,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Прыжок",
@@ -4408,7 +4408,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Псевдожизнь",
@@ -4423,7 +4423,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Путешествие через растения",
@@ -4438,7 +4438,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Пылающий шар",
@@ -4453,7 +4453,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Радужная стена",
@@ -4468,7 +4468,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Радужные брызги",
@@ -4483,7 +4483,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Разговор с животными",
@@ -4498,7 +4498,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Разговор с мёртвыми",
@@ -4513,7 +4513,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Разговор с растениями",
@@ -4528,7 +4528,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Размытый образ",
@@ -4543,7 +4543,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Разрушительная волна",
@@ -4558,7 +4558,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Разящее око",
@@ -4573,7 +4573,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Раскалённый металл",
@@ -4588,7 +4588,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Распад",
@@ -4603,7 +4603,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Рассеивание зла и добра",
@@ -4618,7 +4618,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Рассеивание магии",
@@ -4633,7 +4633,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Регенерация",
@@ -4648,7 +4648,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Речь златоуста",
@@ -4663,7 +4663,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Рост растений",
@@ -4678,7 +4678,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Руки Хадара",
@@ -4693,7 +4693,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сверкающие брызги",
@@ -4708,7 +4708,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Свет",
@@ -4723,7 +4723,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Свобода перемещения",
@@ -4738,7 +4738,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Связь с иным миром",
@@ -4753,7 +4753,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Святилище",
@@ -4768,7 +4768,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Священное пламя",
@@ -4783,7 +4783,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сглаз",
@@ -4798,7 +4798,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Сигнал тревоги",
@@ -4813,7 +4813,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Силовая стена",
@@ -4828,7 +4828,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Скольжение",
@@ -4843,7 +4843,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Скороход",
@@ -4858,7 +4858,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Слабоумие",
@@ -4873,7 +4873,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Слияние с камнем",
@@ -4888,7 +4888,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Слово возврата",
@@ -4903,7 +4903,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Слово силы: исцеление",
@@ -4918,7 +4918,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Слово силы: оглушение",
@@ -4933,7 +4933,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Слово силы: смерть",
@@ -4948,7 +4948,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Смена обличья",
@@ -4963,7 +4963,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Смертный ужас",
@@ -4978,7 +4978,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Смятение",
@@ -4993,7 +4993,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Снятие проклятья",
@@ -5008,7 +5008,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Создание прохода",
@@ -5023,7 +5023,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сокрытие разума",
@@ -5038,7 +5038,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Солнечный луч",
@@ -5053,7 +5053,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Солнечный ожог",
@@ -5068,7 +5068,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сообщение",
@@ -5083,7 +5083,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сопротивление",
@@ -5098,7 +5098,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сотворение или уничтожение воды",
@@ -5113,7 +5113,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сотворение нежити",
@@ -5128,7 +5128,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Сотворение пищи и воды",
@@ -5143,7 +5143,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сотворение пламени",
@@ -5158,7 +5158,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Стена ветров",
@@ -5173,7 +5173,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Стена клинков",
@@ -5188,7 +5188,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Стихийное оружие",
@@ -5203,7 +5203,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Страж веры",
@@ -5218,7 +5218,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Стражи",
@@ -5233,7 +5233,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Сфера неуязвимости",
@@ -5248,7 +5248,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Таинственный мираж",
@@ -5263,7 +5263,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Телекинез",
@@ -5278,7 +5278,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Телепатия",
@@ -5293,7 +5293,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Тензеров парящий диск",
@@ -5308,7 +5308,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Терновая стена",
@@ -5323,7 +5323,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Терновый кнут",
@@ -5338,7 +5338,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Тишина",
@@ -5353,7 +5353,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Трюк с верёвкой",
@@ -5368,7 +5368,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Туманное облако",
@@ -5383,7 +5383,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Туманный шаг",
@@ -5398,7 +5398,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Тьма",
@@ -5413,7 +5413,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Убежище",
@@ -5428,7 +5428,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Увеличение/уменьшение",
@@ -5443,7 +5443,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Удержание личности",
@@ -5458,7 +5458,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Оживление вещей",
@@ -5473,7 +5473,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Реинкарнация",
@@ -5488,7 +5488,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Сотворение",
@@ -5503,7 +5503,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Телепортация",
@@ -5518,7 +5518,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Тёмное зрение",
@@ -5533,7 +5533,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [102],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Власть над ветрами",
@@ -5548,7 +5548,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Власть над огнём",
@@ -5563,7 +5563,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Водоворот",
@@ -5578,7 +5578,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Водяная стена",
@@ -5593,7 +5593,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Водяная сфера",
@@ -5608,7 +5608,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Волшебный камень",
@@ -5623,7 +5623,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Дрожь земли",
@@ -5638,7 +5638,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Едкий шар",
@@ -5653,7 +5653,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Защитный ветер",
@@ -5668,7 +5668,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Звериные узы",
@@ -5683,7 +5683,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Земляная хватка Максимилиана",
@@ -5698,7 +5698,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Извержение земли",
@@ -5713,7 +5713,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Испепеление",
@@ -5728,7 +5728,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Катапульта",
@@ -5743,7 +5743,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Кости земли",
@@ -5758,7 +5758,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Ледяной кинжал",
@@ -5773,7 +5773,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Лепка земли",
@@ -5788,7 +5788,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Мельфовы маленькие метеоры",
@@ -5803,7 +5803,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Небесные письмена",
@@ -5818,7 +5818,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Облачение ветра",
@@ -5833,7 +5833,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Облачение камня",
@@ -5848,7 +5848,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Облачение льда",
@@ -5863,7 +5863,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Облачение огня",
@@ -5878,7 +5878,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Обморожение",
@@ -5893,7 +5893,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Пекло Аганаззара",
@@ -5908,7 +5908,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Первородный страж",
@@ -5923,7 +5923,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Песчаная стена",
@@ -5938,7 +5938,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Пиротехника",
@@ -5953,7 +5953,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Поглощение стихий",
@@ -5968,7 +5968,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Reaction
+      castTimeType: CastTimeType.Reaction
     },
     {
       title: "Преобразование камня",
@@ -5983,7 +5983,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Приливная волна",
@@ -5998,7 +5998,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Проклятье стихий",
@@ -6013,7 +6013,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Пылающие стрелы",
@@ -6028,7 +6028,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Пылевой вихрь",
@@ -6043,7 +6043,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Раскат грома",
@@ -6058,7 +6058,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Смерч",
@@ -6073,7 +6073,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Снежный шквал Сниллока",
@@ -6088,7 +6088,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сотворение костра",
@@ -6103,7 +6103,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сфера бури",
@@ -6118,7 +6118,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Ужасное увядание Аби-Далзима",
@@ -6133,7 +6133,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Узы земли",
@@ -6148,7 +6148,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Формование воды",
@@ -6163,7 +6163,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Шквал",
@@ -6178,7 +6178,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [107, 109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Первобытная дикость",
@@ -6193,7 +6193,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Слово сияния",
@@ -6208,7 +6208,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Нашествие",
@@ -6223,7 +6223,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Погребальный звон",
@@ -6238,7 +6238,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Громовой клинок",
@@ -6253,7 +6253,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [108, 117],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Клинок зелёного пламени",
@@ -6268,7 +6268,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [108, 117],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Лассо молнии",
@@ -6283,7 +6283,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [108, 117],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Вспышка мечей",
@@ -6298,7 +6298,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [108, 117],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Вызов страха",
@@ -6313,7 +6313,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Силок",
@@ -6328,7 +6328,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Снаряд Хаоса",
@@ -6343,7 +6343,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Церемония",
@@ -6358,7 +6358,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: true,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Удар Зефира",
@@ -6373,7 +6373,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Дыхание дракона",
@@ -6388,7 +6388,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Исцеляющий дух",
@@ -6403,7 +6403,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Пронзание разума",
@@ -6418,7 +6418,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Теневой клинок",
@@ -6433,7 +6433,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Громовой шаг",
@@ -6448,7 +6448,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Дрёма",
@@ -6463,7 +6463,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Изобилие врагов",
@@ -6478,7 +6478,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Крошечный слуга",
@@ -6493,7 +6493,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Передача жизни",
@@ -6508,7 +6508,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Болезненное сияние",
@@ -6523,7 +6523,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Облачение тени",
@@ -6538,7 +6538,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Очарование чудовища",
@@ -6553,7 +6553,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Поиск высшего скакуна",
@@ -6568,7 +6568,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Призыв высшего демона",
@@ -6583,7 +6583,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Страж природы",
@@ -6598,7 +6598,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Гнев природы",
@@ -6613,7 +6613,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Далёкий шаг",
@@ -6628,7 +6628,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Инфернальный зов",
@@ -6643,7 +6643,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Обессиливание",
@@ -6658,7 +6658,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Пляска смерти",
@@ -6673,7 +6673,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Поток негативной энергии",
@@ -6688,7 +6688,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Рассвет",
@@ -6703,7 +6703,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Священное оружие",
@@ -6718,7 +6718,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Синаптический разряд",
@@ -6733,7 +6733,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Стена света",
@@ -6748,7 +6748,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Удар стального ветра",
@@ -6763,7 +6763,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Усиление навыка",
@@ -6778,7 +6778,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Клетка душ",
@@ -6793,7 +6793,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Reaction
+      castTimeType: CastTimeType.Reaction
     },
     {
       title: "Ментальная тюрьма",
@@ -6808,7 +6808,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Раскидывание",
@@ -6823,7 +6823,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Роща друида",
@@ -6838,7 +6838,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Сотворение гомункула",
@@ -6853,7 +6853,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Трансформация Тензера",
@@ -6868,7 +6868,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Корона звёзд",
@@ -6883,7 +6883,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Слово силы: боль",
@@ -6898,7 +6898,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Храм богов",
@@ -6913,7 +6913,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Иллюзорный дракон",
@@ -6928,7 +6928,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Могучая крепость",
@@ -6943,7 +6943,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Одуряющая тьма",
@@ -6958,7 +6958,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Множественное превращение",
@@ -6973,7 +6973,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Неуязвимость",
@@ -6988,7 +6988,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Психический крик",
@@ -7003,7 +7003,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Кодировка мыслей",
@@ -7018,7 +7018,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [112],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Быстрые друзья",
@@ -7033,7 +7033,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [115],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Подарок болтуна",
@@ -7048,7 +7048,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [115],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Reaction
+      castTimeType: CastTimeType.Reaction
     },
     {
       title: "Спровоцированная жадность",
@@ -7063,7 +7063,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [115],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Искажение цены",
@@ -7078,7 +7078,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [115],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Призыв низших демонов",
@@ -7093,7 +7093,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [109],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сверкающая монета Джима",
@@ -7108,7 +7108,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [115],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Волшебная стрела Джима",
@@ -7123,7 +7123,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [115],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Мотивирующая речь",
@@ -7138,7 +7138,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [115],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Иссушающий укол",
@@ -7153,7 +7153,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Дар готовности",
@@ -7168,7 +7168,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Притяжение",
@@ -7183,7 +7183,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Благословение удачи",
@@ -7198,7 +7198,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Неподвижный предмет",
@@ -7213,7 +7213,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Карман на запястье",
@@ -7228,7 +7228,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: true,
       isRitual: true,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Силовая волна",
@@ -7243,7 +7243,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Центр притяжения",
@@ -7258,7 +7258,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Временной сдвиг",
@@ -7273,7 +7273,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Reaction
+      castTimeType: CastTimeType.Reaction
     },
     {
       title: "Гравитационный разлом",
@@ -7288,7 +7288,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Единство сущностей",
@@ -7303,7 +7303,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Тёмная звезда",
@@ -7318,7 +7318,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Брешь в реальности",
@@ -7333,7 +7333,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Ревущая бездна",
@@ -7348,7 +7348,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Утрата времени",
@@ -7363,7 +7363,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [116],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Ледяные пальцы",
@@ -7378,7 +7378,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [120],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сотворение магена",
@@ -7393,7 +7393,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [120],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Hour
+      castTimeType: CastTimeType.Hour
     },
     {
       title: "Едкое варево Таши",
@@ -7408,7 +7408,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Клинок разрушения",
@@ -7423,7 +7423,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Крепость интеллекта",
@@ -7438,7 +7438,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Расщепление разума",
@@ -7453,7 +7453,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Покров духа",
@@ -7468,7 +7468,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Потусторонний облик Таши",
@@ -7483,7 +7483,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Психическая плеть Таши",
@@ -7498,7 +7498,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сон синей вуали",
@@ -7513,7 +7513,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Призыв духа аберрации",
@@ -7528,7 +7528,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв духа зверя",
@@ -7543,7 +7543,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв духа исчадия",
@@ -7558,7 +7558,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв духа конструкта",
@@ -7573,7 +7573,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв духа небожителя",
@@ -7588,7 +7588,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв духа нежити",
@@ -7603,7 +7603,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв духа стихии",
@@ -7618,7 +7618,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв духа тени",
@@ -7633,7 +7633,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв духа феи",
@@ -7648,7 +7648,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [117],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Поступь Ашардалона",
@@ -7663,7 +7663,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [152],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Драконоподобное превращение",
@@ -7678,7 +7678,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [152],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Платиновый щит Физбана",
@@ -7693,7 +7693,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [152],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Озорство Натайра",
@@ -7708,7 +7708,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [152],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Психическое копье Раулотима",
@@ -7723,7 +7723,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [152],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сковывающий лёд Райма",
@@ -7738,7 +7738,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [152],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Призыв духа дракона",
@@ -7753,7 +7753,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [152],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Стая фамильяров",
@@ -7768,7 +7768,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [153],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Быстрый курьер Галдера",
@@ -7783,7 +7783,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [153],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Башня Галдера",
@@ -7798,7 +7798,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [153],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Minute
+      castTimeType: CastTimeType.Minute
     },
     {
       title: "Заимствованные знания",
@@ -7813,7 +7813,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [155],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Увлекательная прогулка",
@@ -7828,7 +7828,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [155],
       needsConcentration: true,
       isRitual: false,
-      castTime: CastTime.BonusAction
+      castTimeType: CastTimeType.BonusAction
     },
     {
       title: "Искусная острота",
@@ -7843,7 +7843,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [155],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Reaction
+      castTimeType: CastTimeType.Reaction
     },
     {
       title: "Вихрь искривления",
@@ -7858,7 +7858,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [155],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Увядание и цветение",
@@ -7873,7 +7873,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [155],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Воздушный пузырь",
@@ -7888,7 +7888,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [160],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
     {
       title: "Сотворение магического руля",
@@ -7903,7 +7903,7 @@ const unprasedSpells: UnparsedSpell[] = [
       source: [160],
       needsConcentration: false,
       isRitual: false,
-      castTime: CastTime.Action
+      castTimeType: CastTimeType.Action
     },
   ];
 

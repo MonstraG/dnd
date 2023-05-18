@@ -1,0 +1,23 @@
+{
+  "title": "Дар готовности",
+  "title_en": "Gift of alacrity",
+  "slug": "2442-gift_of_alacrity",
+  "level": 1,
+  "item_suffix": "ВС.",
+  "schoolSlug": "divination",
+  "classes": [],
+  "classesTce": [],
+  "archtype": [
+    136,
+    135
+  ],
+  "source": "«Explorer's Guide to Wildemount»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "minute",
+  "castTime": "1 минута",
+  "distance": "Касание",
+  "duration": "8 часов",
+  "archtypes": "магия гравитургии (волшебник), магия хронургии (волшебник)",
+  "description": "<p><span>Вы касаетесь согласного существа. На время действия заклинания цель может прибавлять 1к8 к своим броскам инициативы.</span><br></p>"
+}

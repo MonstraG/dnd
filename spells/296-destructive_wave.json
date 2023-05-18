@@ -1,0 +1,24 @@
+{
+  "title": "Разрушительная волна",
+  "title_en": "Destructive wave",
+  "slug": "296-destructive_wave",
+  "level": 5,
+  "item_suffix": "В..",
+  "schoolSlug": "evocation",
+  "classes": [
+    16
+  ],
+  "classesTce": [],
+  "archtype": [
+    146
+  ],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "На себя (30-футовый радиус)",
+  "duration": "Мгновенная",
+  "archtypes": "домен бури (жрец)",
+  "description": "<p>Вы топаете по полу, создавая волну божественной энергии, исходящей от вас. Все существа, выбранные вами в пределах 30 футов, должны преуспеть в спасброске Телосложения, иначе они получат 5к6 урона звуком, а также 5к6 урона излучением или некротической энергией (по вашему выбору), и будут <span tooltip-for=\"condition.prone\" title=\"condition.prone\">сбиты с ног</span>. Существо, преуспевшее в спасброске, получает половину урона и не сбивается с ног.</p>"
+}

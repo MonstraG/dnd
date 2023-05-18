@@ -1,0 +1,21 @@
+{
+  "title": "Божественное слово",
+  "title_en": "Divine word",
+  "slug": "12-divine_word",
+  "level": 7,
+  "item_suffix": "В..",
+  "schoolSlug": "evocation",
+  "classes": [
+    13
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "bonus_action",
+  "castTime": "1 бонусное действие",
+  "distance": "30 футов",
+  "duration": "Мгновенная",
+  "description": "<p>Вы произносите божественное слово, наделённое силой, сформировавшей мир на заре творения. Выберите любое количество существ, которых вы видите в пределах дистанции. Все эти существа, слышащие вас, должны совершить спасбросок Харизмы. При провале существо попадает под действие эффекта, основанного на текущем количестве хитов:</p>\n<ul>\n<li>50 хитов или меньше: <span tooltip-for=\"condition.deafened\" title=\"condition.deafened\">глухота</span> на 1 минуту.</li>\n<li>40 хитов или меньше: <span tooltip-for=\"condition.deafened\" title=\"condition.deafened\">глухота</span> и <span tooltip-for=\"condition.blinded\" title=\"condition.blinded\">слепота</span> на 10 минут.</li>\n<li>30 хитов или меньше: <span tooltip-for=\"condition.blinded\" title=\"condition.blinded\">слепота</span>, <span tooltip-for=\"condition.deafened\" title=\"condition.deafened\">глухота</span> и <span tooltip-for=\"condition.stunned\" title=\"condition.stunned\">ошеломление</span> на 1 час.</li>\n<li>20 хитов или меньше: <span tooltip-for=\"death.instant\" title=\"death.instant\">моментальная смерть</span>.</li>\n</ul>\n<p>Вне зависимости от текущих хитов, Исчадия, Небожители, Феи и Элементали, провалившие спасбросок, изгоняются на свой родной план (если только они уже там не находятся), и не могут вернуться на ваш текущий план в течение 24 часов кроме как посредством заклинания <a href=\"/spells/124-wish/\" target=\"_blank\">исполнение желаний [wish]</a>.</p>"
+}

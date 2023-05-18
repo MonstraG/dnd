@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
-    "r": "ts-node ./src/fetchData.ts"
+    "r": "ts-node ./src/parseHtmlPages.ts"
   },
   "devDependencies": {
     "@types/node": "^18.16.13",

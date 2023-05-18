@@ -1,0 +1,23 @@
+{
+  "title": "Опутывание",
+  "title_en": "Entangle",
+  "slug": "211-entangle",
+  "level": 1,
+  "item_suffix": "ВС.",
+  "schoolSlug": "conjuration",
+  "classes": [
+    22
+  ],
+  "classesTce": [
+    17
+  ],
+  "archtype": [],
+  "source": "«Player's handbook»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "90 футов",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "description": "<p> Из точки на земле в пределах дистанции на площади квадрата с длиной стороны в 20 футов вырастают цепкие травы и плети. Пока заклинание активно, эти растения превращают землю в <span tooltip-for=\"terrain.difficult\" title=\"terrain.difficult\">труднопроходимую местность</span>.</p>\n<p>Существа, находящиеся в этой области, когда вы накладываете заклинание, должны преуспеть в спасброске Силы, иначе они станут <span tooltip-for=\"condition.restrained\" title=\"condition.restrained\">опутанными</span> растениями до окончания действия заклинания. <span tooltip-for=\"condition.restrained\" title=\"condition.restrained\">Опутанное</span> растениями существо может действием совершать проверки Силы против Сл ваших заклинаний. В случае успеха оно освобождается.</p>\n<p>Когда заклинание оканчивается, вызванные растения увядают.</p>"
+}

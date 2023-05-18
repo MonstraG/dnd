@@ -1,0 +1,28 @@
+{
+  "title": "Щит",
+  "title_en": "Shield",
+  "slug": "70-shield",
+  "level": 1,
+  "item_suffix": "ВС.",
+  "schoolSlug": "abjuration",
+  "classes": [
+    21,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [
+    161,
+    162,
+    168,
+    286
+  ],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "reaction",
+  "castTime": "1 реакция, совершаемая вами, когда  по вам попадает атака или вы становитесь целью волшебной стрелы",
+  "distance": "На себя",
+  "duration": "1 раунд",
+  "archtypes": "артиллерист (изобретатель), боевой кузнец (изобретатель), ведьмовской клинок (колдун), лунное чародейство (чародей)",
+  "description": "<p>Невидимый барьер из магической силы появляется, защищая вас. Вы получаете до начала своего следующего хода бонус +5 к КД, в том числе и против вызвавшей срабатывание атаки, и вы не получаете урон от <a href=\"/spells/27-magic_missile/\" target=\"_blank\">волшебной стрелы [magic missile]</a>.</p>"
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Туманный шаг",
+  "title_en": "Misty step",
+  "slug": "352-misty_step",
+  "level": 2,
+  "item_suffix": "В..",
+  "schoolSlug": "conjuration",
+  "classes": [
+    21,
+    20,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [
+    139,
+    184,
+    185,
+    203,
+    206
+  ],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "bonus_action",
+  "castTime": "1 бонусное действие",
+  "distance": "На себя",
+  "duration": "Мгновенная",
+  "archtypes": "клятва древних (паладин), клятва мести (паладин), круг земли (друид), странник горизонта (следопыт), странник фей (следопыт)",
+  "description": "<p>Окутавшись серебристым туманом, вы телепортируетесь на 30 футов в свободное пространство, видимое вами.</p>"
+}

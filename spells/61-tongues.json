@@ -1,0 +1,25 @@
+{
+  "title": "Языки",
+  "title_en": "Tongues",
+  "slug": "61-tongues",
+  "level": 3,
+  "item_suffix": "В.М",
+  "schoolSlug": "divination",
+  "classes": [
+    21,
+    12,
+    13,
+    20,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "Касание",
+  "duration": "1 час",
+  "description": "<p>Это заклинание дарует существу, которого вы касаетесь, способность понимать все языки, которые оно слышит. Более того, когда цель говорит, все существа, знающие хотя бы один язык, и слышащие цель, понимают, что она сказала.</p>"
+}

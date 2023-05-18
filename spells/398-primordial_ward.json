@@ -1,0 +1,21 @@
+{
+  "title": "Первородный страж",
+  "title_en": "Primordial ward",
+  "slug": "398-primordial_ward",
+  "level": 6,
+  "item_suffix": "ВС.",
+  "schoolSlug": "abjuration",
+  "classes": [
+    22
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Princes of the Apocalypse», «Xanathar's Guide to Everything»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "На себя",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "description": "<p>Вы получаете сопротивление урону звуком, кислотой, огнём, холодом и электричеством на время действия заклинания.</p>\r\n<p>Когда вы получаете урон одного из этих видов, вы можете реакцией получить иммунитет к этому виду урона, включая тот урон, который спровоцировал эту реакцию. В этом случае вы теряете сопротивление к остальным видам урона, а иммунитет пропадает в конце вашего следующего хода, после чего заклинание заканчивается.</p>"
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Чудо-ягоды",
+  "title_en": "Goodberry",
+  "slug": "78-goodberry",
+  "level": 1,
+  "item_suffix": "ВСМ",
+  "schoolSlug": "transmutation",
+  "classes": [
+    22,
+    17
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "Касание",
+  "duration": "Мгновенная",
+  "description": "<p>В вашей руке появляются до десяти ягод, наполненных магией. Любое существо может действием съесть одну ягоду. Это восстанавливает 1 хит, и ягода настолько питательна, что насыщает существо на весь день.</p>\n<p>Ягоды теряют силу, если их не съесть через 24 часа после создания.</p>"
+}

@@ -1,0 +1,34 @@
+{
+  "title": "Защита от энергии",
+  "title_en": "Protection from energy",
+  "slug": "106-protection_from_energy",
+  "level": 3,
+  "item_suffix": "ВС.",
+  "schoolSlug": "abjuration",
+  "classes": [
+    21,
+    22,
+    13,
+    23,
+    17,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [
+    139,
+    155,
+    184,
+    185,
+    190,
+    215
+  ],
+  "source": "«Player's handbook»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "Касание",
+  "duration": "Концентрация, вплоть до 1 часа",
+  "archtypes": "домен кузни (жрец), заводная душа (чародей), клятва древних (паладин), клятва мести (паладин), клятва славы (паладин), круг земли (друид)",
+  "description": "<p>Пока заклинание активно, согласное существо, которого вы коснулись, получает сопротивление одному виду урона на ваш выбор: звук, кислота, огонь, холод или электричество.</p>"
+}

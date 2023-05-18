@@ -1,0 +1,22 @@
+{
+  "title": "Находчивость",
+  "title_en": "Glibness",
+  "slug": "179-glibness",
+  "level": 8,
+  "item_suffix": "В..",
+  "schoolSlug": "transmutation",
+  "classes": [
+    12,
+    20
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "На себя",
+  "duration": "1 час",
+  "description": "<p>Пока заклинание не окончится, каждый раз, когда вы совершаете проверку Харизмы, вы можете заменить выпавший результат числом «15». Кроме того, что бы вы ни говорили, магия, проверяющая, говорите ли вы правду, показывает, что вы искренни.</p>"
+}

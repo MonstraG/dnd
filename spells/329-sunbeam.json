@@ -1,0 +1,25 @@
+{
+  "title": "Солнечный луч",
+  "title_en": "Sunbeam",
+  "slug": "329-sunbeam",
+  "level": 6,
+  "item_suffix": "ВСМ",
+  "schoolSlug": "evocation",
+  "classes": [
+    21,
+    22,
+    19
+  ],
+  "classesTce": [
+    13
+  ],
+  "archtype": [],
+  "source": "«Player's handbook»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "На себя (60-футовая линия)",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "description": "<p>Луч ярчайшего света исходит из вашей ладони линией шириной 5 футов и длиной 60 футов. Все существа в этой линии должны совершить спасбросок Телосложения. При провале существо получает урон излучением 6к8 и становится <span tooltip-for=\"condition.blinded\" title=\"condition.blinded\">ослеплённым</span> до вашего следующего хода. При успехе оно получает половину урона и не ослепляется. Нежить и Слизи совершают этот спасбросок с помехой.</p>\n<p>Пока заклинание активно, вы можете действием создавать новые линии света.</p>\n<p>Пока заклинание активно, в вашей руке светится яркая искра. Она испуск<span>ает </span><span tooltip-for=\"light.bright\" title=\"light.bright\">яркий свет</span><span> в пределах 30 футов и </span><span tooltip-for=\"light.dim\" title=\"light.dim\">тусклый свет</span><span> в</span> пределах ещё 30 футов. Это свет идентичен солнечному.</p>"
+}

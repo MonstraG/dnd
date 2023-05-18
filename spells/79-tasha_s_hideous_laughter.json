@@ -1,0 +1,25 @@
+{
+  "title": "Жуткий смех Таши",
+  "title_en": "Tasha's hideous laughter",
+  "slug": "79-tasha_s_hideous_laughter",
+  "level": 1,
+  "item_suffix": "ВСМ",
+  "schoolSlug": "enchantment",
+  "classes": [
+    21,
+    12
+  ],
+  "classesTce": [],
+  "archtype": [
+    166
+  ],
+  "source": "«Player's handbook»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "30 футов",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "archtypes": "Великий Древний (колдун)",
+  "description": "<p>Существо на ваш выбор, видимое в пределах дистанции, воспринимает всё невероятно смешным и корчится от смеха, если заклинание на него действует. Цель должна преуспеть в спасброске Мудрости, иначе она падает <span tooltip-for=\"condition.prone\" title=\"condition.prone\">ничком</span>, становится <span tooltip-for=\"condition.incapacitated\" title=\"condition.incapacitated\">недееспособной</span> и в течение действия заклинания не может встать. Существа со значением Интеллекта 4 и ниже не попадают под действие этого заклинания.</p>\n<p>В конце каждого своего хода и каждый раз при получении урона цель может совершать новый спасбросок Мудрости. Спасбросок совершается с преимуществом, если он был вызван получением урона. При успехе заклинание оканчивается.</p>"
+}

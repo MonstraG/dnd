@@ -1,0 +1,23 @@
+{
+  "title": "Далёкий шаг",
+  "title_en": "Far step",
+  "slug": "484-far_step",
+  "level": 5,
+  "item_suffix": "В..",
+  "schoolSlug": "conjuration",
+  "classes": [
+    21,
+    20,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Xanathar's Guide to Everything»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "bonus_action",
+  "castTime": "1 бонусное действие",
+  "distance": "На себя",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "description": "<p>Вы телепортируетесь до 60 футов в свободное пространство, видимое вами. Вы можете каждый ваш ход до окончания действия заклинания бонусным действием телепортироваться таким образом снова. </p>"
+}

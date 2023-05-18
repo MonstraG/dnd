@@ -1,0 +1,21 @@
+{
+  "title": "Аура святости",
+  "title_en": "Holy aura",
+  "slug": "6-holy_aura",
+  "level": 8,
+  "item_suffix": "ВСМ",
+  "schoolSlug": "abjuration",
+  "classes": [
+    13
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Player's handbook»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "На себя",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "description": "<p>Божественный свет исходит от вас мягким сиянием в радиусе 30 футов. Пока заклинание активно, существа\n                    в этом радиусе, выбранные вами при накладывании этого заклинания, испускаю<span>т </span><span                         tooltip-for=\"light.dim\" title=\"light.dim\">тусклый свет</span><span> в рад</span>иусе 5 футов и\n                    совершают все спасброски с преимуществом, а остальные существа совершают с помехой броски атаки по\n                    ним. Кроме того, если Исчадие или Нежить попадает по такому существу рукопашной атакой, аура\n                    вспыхивает ярким светом. Атакующий должен преуспеть в спасброске Телосложения, иначе станет <span                         tooltip-for=\"condition.blinded\" title=\"condition.blinded\">ослеплённым</span>, пока это\n                    заклинание не окончится.</p>"
+}

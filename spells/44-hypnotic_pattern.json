@@ -1,0 +1,28 @@
+{
+  "title": "Гипнотический узор",
+  "title_en": "Hypnotic pattern",
+  "slug": "44-hypnotic_pattern",
+  "level": 3,
+  "item_suffix": ".СМ",
+  "schoolSlug": "illusion",
+  "classes": [
+    21,
+    12,
+    20,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [
+    163,
+    188
+  ],
+  "source": "«Player's handbook»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "120 футов",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "archtypes": "бронник (изобретатель), клятва искупления (паладин)",
+  "description": "<p>Вы создаете хитрый разноцветный узор, переплетающийся в воздухе внутри куба с длиной ребра 30 футов, находящегося в пределах дистанции. Узор появляется на краткий миг и исчезает. Все существа в этой области, видящие узор, должны совершить спасбросок Мудрости. При провале существо становится <span tooltip-for=\"condition.charmed\" title=\"condition.charmed\">очарованным</span> на время действия заклинания. Будучи <span tooltip-for=\"condition.charmed\" title=\"condition.charmed\">очарованным</span> этим заклинанием, существо <span tooltip-for=\"condition.incapacitated\" title=\"condition.incapacitated\">недееспособно</span>, и его скорость равна 0. Заклинание заканчивается для отдельного существа, если оно получает урон или если кто-то другой действием потрясет его, чтобы вывести из ступора.</p>"
+}

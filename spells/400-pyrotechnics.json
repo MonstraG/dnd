@@ -1,0 +1,24 @@
+{
+  "title": "Пиротехника",
+  "title_en": "Pyrotechnics",
+  "slug": "400-pyrotechnics",
+  "level": 2,
+  "item_suffix": "ВС.",
+  "schoolSlug": "transmutation",
+  "classes": [
+    21,
+    12,
+    23,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Princes of the Apocalypse», «Xanathar's Guide to Everything»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "60 футов",
+  "duration": "Мгновенная",
+  "description": "<p>Выберите область немагического огня в кубе с длиной ребра 5 футов, которую вы видите в пределах дистанции. Вы можете потушить огонь в этой области, а затем сотворить фейерверки или дымовую завесу.</p>\n<p><strong><em>Дымовая завеса.</em></strong> Густой чёрный дым расползается в радиусе 20 футов, огибая углы. Область становится<span> </span><span tooltip-for=\"obscured.heavily\" title=\"obscured.heavily\">сильно заслонённой</span><span>. </span>Дым остаётся на месте 1 минуту, или пока сильный ветер не развеет его.</p>\n<p><em><strong>Фейерверки.</strong> </em>Область взрывается ослепительной разноцветной вспышкой. Все существа в пределах 10 футов от области должны преуспеть в спасброске Телосложения, иначе станут <span tooltip-for=\"condition.blinded\" title=\"condition.blinded\">ослеплёнными</span> до конца вашего следующего хода.</p>"
+}

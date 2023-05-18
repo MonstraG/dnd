@@ -1,0 +1,21 @@
+{
+  "title": "Водоворот",
+  "title_en": "Maelstrom",
+  "slug": "375-maelstrom",
+  "level": 5,
+  "item_suffix": "ВСМ",
+  "schoolSlug": "evocation",
+  "classes": [
+    22
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Princes of the Apocalypse», «Xanathar's Guide to Everything»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "120 футов",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "description": "<p>В точке, которую вы можете видеть в пределах дистанции, возникает воронка воды радиусом 30 футов и глубиной 5 футов. Точка должна находиться на поверхности земли или в толще воды. Пока действует заклинание, эта область считае<span>тся </span><span tooltip-for=\"terrain.difficult\" title=\"terrain.difficult\">труднопроходимой местностью</span><span>, и</span> все существа, начинающие в ней ход, должны преуспеть в спасброске Силы, иначе получат 6к6 дробящего урона и будут подтянуты на 10 футов в направлении центра.</p>"
+}

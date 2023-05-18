@@ -3,7 +3,12 @@ import fs from "fs/promises";
 import { parse } from 'node-html-parser';
 import { setTimeout } from 'timers/promises';
 
+
 (async () => {
+    const safeguard = true;
+    // don't accidentally call it!
+    if (safeguard) return;
+
     const targetDir = "./pages/";
 
     await (async function createFolder() {

@@ -1,0 +1,26 @@
+{
+  "title": "Раскат грома",
+  "title_en": "Thunderclap",
+  "slug": "407-thunderclap",
+  "level": "Заговор",
+  "item_suffix": ".С.",
+  "schoolSlug": "evocation",
+  "classes": [
+    21,
+    12,
+    22,
+    23,
+    20,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Princes of the Apocalypse», «Xanathar's Guide to Everything»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "5 футов",
+  "duration": "Мгновенная",
+  "description": "<p>Вы вызываете оглушительный раскат грома, который слышен на расстоянии до 100 футов. Все существа кроме вас в пределах дистанции должны совершить спасбросок Телосложения. При провале существо получает 1к6 урона звуком.</p>\n<p>Урон заклинания увеличивается на 1к6, когда вы достигаете 5-го уровня (2к6), 11-го уровня (3к6) и 17-го уровня (4к6).</p>"
+}

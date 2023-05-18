@@ -1,0 +1,24 @@
+{
+  "title": "Увлекательная прогулка",
+  "title_en": "Kinetic Jaunt",
+  "slug": "3939-kinetic_jaunt",
+  "level": 2,
+  "item_suffix": ".С.",
+  "schoolSlug": "transmutation",
+  "classes": [
+    21,
+    12,
+    23,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Strixhaven: A Curriculum of Chaos»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "bonus_action",
+  "castTime": "1 бонусное действие",
+  "distance": "На себя",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "description": "<p>Вы магическим образом усиливаете свои движения танцевальными шагами, даруя себе следующие преимущества:</p>\n<ul>\n<li>Ваша скорость ходьбы увеличивается на 10 футов.</li>\n<li>Вы не провоцируете атаки.</li>\n<li>Вы можете перемещаться сквозь других существ, как если бы они были <span tooltip-for=\"terrain.difficult\" title=\"terrain.difficult\">труднопроходимой местностью</span>. Если вы оканчиваете свой ход в пространстве другого существа, то вас выталкивает в последнее занимаемое вами свободное пространство и вы получаете 1к8 урона силовым полем.</li>\n</ul>"
+}

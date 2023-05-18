@@ -1,0 +1,22 @@
+{
+  "title": "Снежный шквал Сниллока",
+  "title_en": "Snilloc's snowball swarm",
+  "slug": "409-snilloc_s_snowball_swarm",
+  "level": 2,
+  "item_suffix": "ВСМ",
+  "schoolSlug": "evocation",
+  "classes": [
+    21,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Princes of the Apocalypse», «Xanathar's Guide to Everything»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "90 футов",
+  "duration": "Мгновенная",
+  "description": "<p>На выбранную вами точку в пределах дистанции обрушивается снежный шквал. Все существа в сфере с радиусом 5 футов и центром в выбранной точке должны совершить спасбросок Ловкости. При провале существо получает 3к6 урона холодом, а при успехе — половину этого урона.</p>\n<p><strong><em>На больших уровнях.</em></strong> Если вы накладываете это заклинание, используя ячейку 3-го уровня или выше, то урон увеличивается на 1к6 за каждый уровень ячейки выше второго.</p>"
+}

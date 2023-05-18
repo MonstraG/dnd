@@ -1,0 +1,21 @@
+{
+  "title": "Громовая кара",
+  "title_en": "Thunderous smite",
+  "slug": "52-thunderous_smite",
+  "level": 1,
+  "item_suffix": "В..",
+  "schoolSlug": "evocation",
+  "classes": [
+    16
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Player's handbook»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "bonus_action",
+  "castTime": "1 бонусное действие",
+  "distance": "На себя",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "description": "<p>В первый раз, когда вы попадаете рукопашной атакой оружием, пока заклинание активно, ваше оружие издаёт громовой рокот, слышимый с расстояния 300 футов, и атака причиняет цели дополнительный урон звуком 2к6. Кроме того, если цель — существо, она должна преуспеть в спасброске Силы, иначе она будет оттолкнута на 10 футов от вас и <span tooltip-for=\"condition.prone\" title=\"condition.prone\">сбита с ног</span>.</p>"
+}

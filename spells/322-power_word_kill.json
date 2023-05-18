@@ -1,0 +1,24 @@
+{
+  "title": "Слово силы: смерть",
+  "title_en": "Power word kill",
+  "slug": "322-power_word_kill",
+  "level": 9,
+  "item_suffix": "В..",
+  "schoolSlug": "enchantment",
+  "classes": [
+    21,
+    12,
+    20,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "60 футов",
+  "duration": "Мгновенная",
+  "description": "<p>Вы произносите слово силы, заставляющее существо, которое вы видите в пределах дистанции, <span tooltip-for=\"death.instant\" title=\"death.instant\">мгновенно умереть</span>. Если у выбранного вами существа 100 хитов или меньше, оно умирает. В противном случае это заклинание не оказывает никакого эффекта.</p>"
+}

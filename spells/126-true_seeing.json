@@ -1,0 +1,25 @@
+{
+  "title": "Истинное зрение",
+  "title_en": "True seeing",
+  "slug": "126-true_seeing",
+  "level": 6,
+  "item_suffix": "ВСМ",
+  "schoolSlug": "divination",
+  "classes": [
+    21,
+    12,
+    13,
+    20,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "Касание",
+  "duration": "1 час",
+  "description": "<p>Заклинание даёт согласному существу, которого вы коснулись, способность видеть вещи такими, какими они являются на самом деле. Пока заклинание активно, это существо обладает <span tooltip-for=\"vision.truevision\" title=\"vision.truevision\">истинным зрением</span>, видит потайные двери, сокрытые магией, и его зрение простирается на Эфирный план, и всё это в пределах 120 футов.</p>"
+}

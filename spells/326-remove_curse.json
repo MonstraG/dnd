@@ -1,0 +1,24 @@
+{
+  "title": "Снятие проклятья",
+  "title_en": "Remove curse",
+  "slug": "326-remove_curse",
+  "level": 3,
+  "item_suffix": "ВС.",
+  "schoolSlug": "abjuration",
+  "classes": [
+    21,
+    13,
+    20,
+    16
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "Касание",
+  "duration": "Мгновенная",
+  "description": "<p>После вашего касания все проклятья, действующие на одно существо или предмет, оканчиваются. Если предмет был проклятым магическим предметом, проклятье остается, но заклинание разрывает настройку владельца на него, поэтому его можно снять или выбросить.</p>"
+}

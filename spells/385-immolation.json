@@ -1,0 +1,22 @@
+{
+  "title": "Испепеление",
+  "title_en": "Immolation",
+  "slug": "385-immolation",
+  "level": 5,
+  "item_suffix": "В..",
+  "schoolSlug": "evocation",
+  "classes": [
+    21,
+    19
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Princes of the Apocalypse», «Xanathar's Guide to Everything»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "90 футов",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "description": "<p>Одно существо, которое вы можете видеть в пределах дистанции, охватывает пламя. Цель должна совершить спасбросок Ловкости. Существо получает 8к6 урона огнём при провале или половину этого урона при успехе. Кроме того, при провале цель воспламеняется на время действия заклинания. Горящая цель испускае<span>т </span><span tooltip-for=\"light.bright\" title=\"light.bright\">яркий свет</span><span> в пределах 30 футов и </span><span tooltip-for=\"light.dim\" title=\"light.dim\">тусклый свет</span><span> в пределах ещё 30 футов. В конце каждого своего хода цель повторяет спасбросок. При провале цель получает 4к6 урона о</span>гнём. При успехе заклинание оканчивается. Этот магический огонь не может быть погашен немагическими средствами.</p><p><span>Если урон от этого заклинания убивает цель, то она превращается в пепел. </span></p>"
+}

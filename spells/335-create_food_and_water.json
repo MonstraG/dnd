@@ -1,0 +1,27 @@
+{
+  "title": "Сотворение пищи и воды",
+  "title_en": "Create food and water",
+  "slug": "335-create_food_and_water",
+  "level": 3,
+  "item_suffix": "ВС.",
+  "schoolSlug": "conjuration",
+  "classes": [
+    13,
+    23,
+    16
+  ],
+  "classesTce": [],
+  "archtype": [
+    139,
+    171
+  ],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "30 футов",
+  "duration": "Мгновенная",
+  "archtypes": "гений (колдун), круг земли (друид)",
+  "description": "<p>Вы создаёте 45 фунтов еды и 30 галлонов (100 литров) воды на земле или в контейнере в пределах дистанции, которых достаточно для питания пятнадцати Гуманоидов или пятерых скакунов на 24 часа. Еда безвкусная, но сытная, и портится, если её не съесть за 24 часа. Вода чистая, и она не портится.</p>"
+}

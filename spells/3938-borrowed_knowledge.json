@@ -1,0 +1,24 @@
+{
+  "title": "Заимствованные знания",
+  "title_en": "Borrowed Knowledge",
+  "slug": "3938-borrowed_knowledge",
+  "level": 2,
+  "item_suffix": "ВСМ",
+  "schoolSlug": "divination",
+  "classes": [
+    21,
+    12,
+    13,
+    20
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Strixhaven: A Curriculum of Chaos»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "На себя",
+  "duration": "1 час",
+  "description": "<p>Вы черпаете знания у духов прошлого.</p>\n<p>Выберите один навык, которым вы не владеете. На время действия заклинания вы получаете владение выбранным навыком. Заклинание оканчивается раньше, если вы накладываете его снова.</p>"
+}

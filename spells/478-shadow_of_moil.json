@@ -1,0 +1,21 @@
+{
+  "title": "Облачение тени",
+  "title_en": "Shadow of Moil",
+  "slug": "478-shadow_of_moil",
+  "level": 4,
+  "item_suffix": "ВСМ",
+  "schoolSlug": "necromancy",
+  "classes": [
+    20
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Xanathar's Guide to Everything»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "На себя",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "description": "<p>Пламевидные тени окутывают ваше тело на всё время действия заклинания, в результате чего вы становитесь <span tooltip-for=\"obscured.heavily\" title=\"obscured.heavily\">сильно заслонённым</span> для других. Тени превращают<span> </span><span tooltip-for=\"light.dim\" title=\"light.dim\">тусклый свет</span><span> в пределах 10 футов от вас в </span><span tooltip-for=\"light.darkness\" title=\"light.darkness\">темноту</span><span>, а </span><span tooltip-for=\"light.bright\" title=\"light.bright\">яркий свет</span><span> в той же области — в тусклый свет.</span></p>\n<p>Вы получаете сопротивление урону излучением до окончания действия заклинания. Кроме того, всякий раз, когда существо, находящееся в пределах 10 футов от вас, попадает по вам рукопашной атакой, тени атакуют его, причиняя 2к8 урона некротической энергией.</p>"
+}

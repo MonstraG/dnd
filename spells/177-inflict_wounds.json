@@ -1,0 +1,25 @@
+{
+  "title": "Нанесение ран",
+  "title_en": "Inflict wounds",
+  "slug": "177-inflict_wounds",
+  "level": 1,
+  "item_suffix": "ВС.",
+  "schoolSlug": "necromancy",
+  "classes": [
+    13
+  ],
+  "classesTce": [],
+  "archtype": [
+    186,
+    211
+  ],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "Касание",
+  "duration": "Мгновенная",
+  "archtypes": "божественная душа (чародей), клятвопреступник (паладин)",
+  "description": "<p>Совершите рукопашную атаку заклинанием по существу в пределах досягаемости. При попадании цель получает 3к10 урона некротической энергией.</p>\n<p><strong><em>На больших уровнях.</em></strong> Если вы накладываете это заклинание, используя ячейку 2-го уровня или выше, урон увеличивается на 1к10 за каждый уровень ячейки выше первого.</p>"
+}

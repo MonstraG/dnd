@@ -1,0 +1,24 @@
+{
+  "title": "Очищение пищи и питья",
+  "title_en": "Purify food and drink",
+  "slug": "222-purify_food_and_drink",
+  "level": 1,
+  "item_suffix": "ВС.",
+  "schoolSlug": "transmutation",
+  "classes": [
+    22,
+    13,
+    23,
+    16
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": true,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "10 футов",
+  "duration": "Мгновенная",
+  "description": "<p>Вся немагическая еда и питьё в пределах сферы с радиусом 5 футов с центром на точке, выбранной вами в пределах дистанции, очищается и избавляется от ядов и болезней.</p>"
+}

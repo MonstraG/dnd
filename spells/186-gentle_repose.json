@@ -1,0 +1,28 @@
+{
+  "title": "Нетленные останки",
+  "title_en": "Gentle repose",
+  "slug": "186-gentle_repose",
+  "level": 2,
+  "item_suffix": "ВСМ",
+  "schoolSlug": "necromancy",
+  "classes": [
+    21,
+    13
+  ],
+  "classesTce": [
+    16
+  ],
+  "archtype": [
+    145,
+    156
+  ],
+  "source": "«Player's handbook»",
+  "needsConcentration": false,
+  "isRitual": true,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "Касание",
+  "duration": "10 дней",
+  "archtypes": "домен упокоения (жрец), круг спор (друид)",
+  "description": "<p>Вы касаетесь трупа или других останков. Пока заклинание активно, цель защищена от разложения и не может стать Нежитью.</p>\n<p>Это заклинание также увеличивает ограничение по времени, в течение которого труп можно воскресить, так как дни, проведенные под воздействием этого заклинания, не учитываются при подсчёте времени со дня смерти для таких заклинаний как <a href=\"/spells/208-raise_dead/\" target=\"_blank\">оживление [raise dead]</a>.</p>"
+}

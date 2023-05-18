@@ -1,0 +1,22 @@
+{
+  "title": "Вызов страха",
+  "title_en": "Cause fear",
+  "slug": "462-cause_fear",
+  "level": 1,
+  "item_suffix": "В..",
+  "schoolSlug": "necromancy",
+  "classes": [
+    21,
+    20
+  ],
+  "classesTce": [],
+  "archtype": [],
+  "source": "«Xanathar's Guide to Everything»",
+  "needsConcentration": true,
+  "isRitual": false,
+  "castTimeType": "action",
+  "castTime": "1 действие",
+  "distance": "60 футов",
+  "duration": "Концентрация, вплоть до 1 минуты",
+  "description": "<p>Вы пробуждаете ощущение смертности у одного существа, которое можете видеть в пределах дистанции. Конструкты или Нежить имеют иммунитет к этому эффекту. Цель должна преуспеть в спасброске по Мудрости, иначе становится <span tooltip-for=\"condition.frightened\" title=\"condition.frightened\">испуганной</span> вами пока заклинание не окончится. <span tooltip-for=\"condition.frightened\" title=\"condition.frightened\">Испуганное</span> существо может повторять спасброски в конце каждого своего хода, оканчивая эффект на себе при успехе.</p>\n<p><em><strong>На больших уровнях</strong>:</em> Когда вы накладываете это заклинание, используя ячейку 2-го уровня или выше, вы можете сделать целью дополнительно ещё одно существо за каждый уровень ячейки выше 1-й. Выбранные существа должны находиться в пределах 30 футов друг от друга. </p>"
+}
