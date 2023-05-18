@@ -69,7 +69,7 @@ export const Classes = {
 }
 
 const archtypes = [107,135,136,139,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,174,175,179,183,184,185,186,187,188,189,190,191,194,203,204,205,206,207,208,211,212,214,215,286] as const;
-type archtype = typeof archtypes[number];
+export type archtype = typeof archtypes[number];
 
 export enum CastTimeType {
   Action = 1,
@@ -104,7 +104,7 @@ export type UnparsedSpell = {
   item_suffix: "В.." | "ВС." | "ВСМ" | "В.М" | ".СМ" | ".С.",
   classes: (keyof typeof Classes)[],
   classesTce: (keyof typeof Classes)[],
-  archtype: archtype[],
+  archtype?: archtype[],
   source: (keyof typeof sources)[],
   needsConcentration?: boolean,
   isRitual?: boolean,
@@ -113,6 +113,7 @@ export type UnparsedSpell = {
   distance: string,
   duration: string,
   description: string,
+  archtypes?: string,
 }
 
 export type Spell = UnparsedSpell & {
