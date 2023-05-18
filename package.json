@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
-    "r": "ts-node ./src/parseHtmlPages.ts"
+    "r": "ts-node ./src/joinSpellData.ts"
   },
   "devDependencies": {
     "@types/node": "^18.16.13",

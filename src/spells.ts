@@ -56,7 +56,7 @@ export const schools: School[] = [
 
 const schoolBySlug: Record<SchoolSlug, School> = Object.fromEntries(schools.map((s) => [s.slug, s])) as Record<SchoolSlug, School>
 
-export type Classes = {
+export const Classes = {
     13: "жрец",
     16: "паладин",
     20: "колдун",
@@ -72,27 +72,47 @@ const archtypes = [107,135,136,139,143,144,145,146,147,148,149,150,151,152,153,1
 type archtype = typeof archtypes[number];
 
 export enum CastTimeType {
-    Reaction = "reaction",
-    Hour = "hour",
-    Action = "action",
-    BonusAction = "bonus_action",
-    Minute = "minute"
+  Action = 1,
+  Reaction = 2,
+  BonusAction = 3,
+  Minute = 4,
+  Hour = 5,
 }
 
-type UnparsedSpell = {
+export const sources = {
+  102: "Player's handbook",
+  107: "Princes of the Apocalypse",
+  109: "Xanathar's Guide to Everything",
+  112: "Guildmasters' guide to Ravnica",
+  115: "Acquisition Incorporated",
+  116: "Explorer's Guide to Wildemount",
+  120: "Icewind Dale: Rime of the Frostmaiden",
+  117: "Tasha's Cauldron of Everything",
+  152: "Fizban's Treasury of Dragons",
+  153: "Lost Laboratory of Kwalish",
+  155: "Strixhaven: A Curriculum of Chaos",
+  160: "Spelljammer: Adventures in Space",
+  108: "Sword Coast Adventurer's Guide"
+}
+
+export type UnparsedSpell = {
   slug: string;
   title: string;
   title_en: string;
   level: CardLevel | "Заговор";
   schoolSlug: SchoolSlug
   item_suffix: "В.." | "ВС." | "ВСМ" | "В.М" | ".СМ" | ".С.",
-  classes: (keyof Classes)[],
-  classesTce: (keyof Classes)[],
+  classes: (keyof typeof Classes)[],
+  classesTce: (keyof typeof Classes)[],
   archtype: archtype[],
-  source: [102] | [107, 109] | [109] | [108, 117] | [112] | [115] | [116] | [120] | [117] | [155] | [153] | [152] | [160],
-  needsConcentration: boolean,
-  isRitual: boolean,
+  source: (keyof typeof sources)[],
+  needsConcentration?: boolean,
+  isRitual?: boolean,
   castTimeType: CastTimeType,
+  castTime: string,
+  distance: string,
+  duration: string,
+  description: string,
 }
 
 export type Spell = UnparsedSpell & {
@@ -7906,5 +7926,6 @@ export const unprasedSpells: UnparsedSpell[] = [
       castTimeType: CastTimeType.Action
     },
   ];
+
 
 export const spells: Spell[] = unprasedSpells.map(parseSpell);
