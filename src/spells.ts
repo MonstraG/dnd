@@ -107,7 +107,7 @@ const parseSpell = (spell: UnparsedSpell): Spell => ({
     school: schoolBySlug[spell.schoolSlug],
     item_icon: `spell_school_${spell.schoolSlug}`,
     filterText: `${spell.title.toLowerCase()} ${spell.title_en.toLowerCase()}`,
-    href: `https://dnd.su/spells/spells/${spell.slug}`
+    href: `https://dnd.su/spells/${spell.slug}`
 })
 
 const unprasedSpells: UnparsedSpell[] = [
