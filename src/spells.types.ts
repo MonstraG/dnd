@@ -179,13 +179,13 @@ export type UnparsedSpell = {
   title_en: string;
   level: CardLevel | "Заговор";
   schoolSlug: SchoolSlug;
-  item_suffix: "В.." | "ВС." | "ВСМ" | "В.М" | ".СМ" | ".С.";
+  components: "В.." | "ВС." | "ВСМ" | "В.М" | ".СМ" | ".С.";
   classes: (keyof typeof Classes)[];
-  classesTce: (keyof typeof Classes)[];
+  classesTce?: (keyof typeof Classes)[];
   archtypes?: Archtype[];
   source: (keyof typeof sources)[];
-  needsConcentration?: boolean;
-  isRitual?: boolean;
+  concentration?: boolean;
+  ritual?: boolean;
   castTimeType: CastTimeType;
   castTime: string;
   distance: string;
