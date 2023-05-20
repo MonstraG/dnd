@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
-    "r": "ts-node ./src/generateArchTypes.ts"
+    "r": "ts-node ./src/parsedSpells.ts"
   },
   "devDependencies": {
     "@types/node": "^18.16.13",

@@ -174,9 +174,9 @@ export const sources = {
 };
 
 export type UnparsedSpell = {
-  slug: string;
+  id: number;
   title: string;
-  title_en: string;
+  titleEn: string;
   level: CardLevel | "Заговор";
   schoolId: SchoolId;
   components: "В.." | "ВС." | "ВСМ" | "В.М" | ".СМ" | ".С.";
@@ -194,6 +194,7 @@ export type UnparsedSpell = {
 };
 
 export type Spell = UnparsedSpell & {
+  slug: string;
   school: School;
   item_icon: `spell_school_${SchoolSlug}`;
   filterText: string;
