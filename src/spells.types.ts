@@ -19,12 +19,12 @@ type SchoolTitle =
   | "Преобразование"
   | "Прорицание"
   | "Некромантия";
-type SchoolLvl = 1 | 6 | 5 | 3 | 2 | 7 | 8 | 4;
+type SchoolId = 1 | 6 | 5 | 3 | 2 | 7 | 8 | 4;
 
 export type School = {
   slug: SchoolSlug;
   title: SchoolTitle;
-  id: SchoolLvl;
+  id: SchoolId;
 };
 
 export const schools: School[] = [
@@ -70,9 +70,9 @@ export const schools: School[] = [
   },
 ];
 
-export const schoolBySlug: Record<SchoolSlug, School> = Object.fromEntries(
-  schools.map((s) => [s.slug, s])
-) as Record<SchoolSlug, School>;
+export const schoolsByid: Record<SchoolId, School> = Object.fromEntries(
+  schools.map((school) => [school.id, school])
+) as Record<SchoolId, School>;
 
 export const Classes = {
   13: "жрец",
@@ -178,7 +178,7 @@ export type UnparsedSpell = {
   title: string;
   title_en: string;
   level: CardLevel | "Заговор";
-  schoolSlug: SchoolSlug;
+  schoolId: SchoolId;
   components: "В.." | "ВС." | "ВСМ" | "В.М" | ".СМ" | ".С.";
   classes: (keyof typeof Classes)[];
   classesTce?: (keyof typeof Classes)[];
